@@ -12,6 +12,7 @@ const [,, ...args] = process.argv;
 // It just looks more nicer to give
 // it a name
 function main() {
+    if (!args[0]) return help();
     if (args[0] === 'help') return help();
 
     const file = args[0];
