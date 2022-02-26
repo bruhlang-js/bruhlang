@@ -12,14 +12,7 @@ const [,, ...args] = process.argv;
 // It just looks more nicer to give
 // it a name
 function main() {
-    if (args[0] === 'help') {
-        const info = `    bruhlang <file>`;
-        console.log(
-            `BruhLang | v${pkgInfo.version}\nCommands:\n${info}`
-        )
-
-        return;
-    }
+    if (args[0] === 'help') return help();
 
     const file = args[0];
     if(!file) throw new InvalidFileError('No File Input');
@@ -35,6 +28,13 @@ function main() {
     );
 
     console.log(bruhlang.start());
+}
+
+function help() {
+    const info = `    bruhlang <file>`;
+    console.log(
+        `BruhLang | v${pkgInfo.version}\nCommands:\n${info}`
+    )
 }
 
 main();
