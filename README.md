@@ -2,13 +2,12 @@
 
 Super super simple language made in JavaScript, inspired by brainfuck, but instead you can play around with strings.
 
-
 ## cli
 
 `bruhlang <file>`
 To run a file, it is required.
 
-**Example:**
+## Example
 
 ```
 // logs "hello world"
