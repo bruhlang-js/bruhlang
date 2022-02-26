@@ -23,8 +23,9 @@ function main() {
 
     const file = args[0];
     if(!file) throw new InvalidFileError('No File Input');
+    let fileContent;
     try {
-        const fileContent = fs.readFileSync(`${file}`);
+        fileContent = fs.readFileSync(`${file}`);
     } catch {
         throw new InvalidFileError(`No such file as '${file}'`);
     }
