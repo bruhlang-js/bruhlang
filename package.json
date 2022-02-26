@@ -2,9 +2,9 @@
   "name": "bruhlang",
   "version": "0.0.3",
   "description": "Super duper simple language",
-  "main": "cli.js",
+  "main": "./cli/cli.js",
   "bin": {
-    "bruhlang": "./cli.js"
+    "bruhlang": "./cli/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
