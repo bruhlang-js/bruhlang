@@ -39,9 +39,9 @@ const infos = [{
     description: 'Displays this message'
 }];
 
-const commandNames = [
-    'help',
-];
+const commandNames = [];
+
+infos.forEach(data => data.raw !== null && commandNames.push(data.raw));
 
 function help(arg) {
     if (arg && commandNames.includes(arg)) return helpCommand(arg);
@@ -70,7 +70,7 @@ function helpCommand(arg) {
     
     console.log(
         `bruhlang ${name} - ${description}\nUsage:\n    ${usage}`
-    )
+    );
 }
 
 main();
