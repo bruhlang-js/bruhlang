@@ -1,0 +1,27 @@
+{
+  "name": "bruhlang",
+  "version": "0.0.1",
+  "description": "Super duper simple language",
+  "main": "cli.js",
+  "bin": {
+    "bruhlang": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loldonut/bruhlang.git"
+  },
+  "keywords": [
+    "bruhlang",
+    "lang",
+    "bruh"
+  ],
+  "author": "John Heinrich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loldonut/bruhlang/issues"
+  },
+  "homepage": "https://github.com/loldonut/bruhlang#readme"
+}

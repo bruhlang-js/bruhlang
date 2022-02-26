@@ -3,8 +3,12 @@
 Super super simple language made in JavaScript, inspired by brainfuck, but instead you can play around with strings.
 
 
-**Example:**
+## cli
 
+`bruhlang <file>`
+To run a file, it is required.
+
+**Example:**
 
 ```
 // logs "hello world"
@@ -19,6 +23,6 @@ hello world.d
 
 # Operators
 
-`+` - Concatenates the previous character and the next character. (might be buggy with spaces)
+`+` - Concatenates the previous character and the next character. (tends be buggy with spaces)
 
 `.` - Repeats the previous Character
