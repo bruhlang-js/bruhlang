@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const BruhLang = require('./src/bruhlang');
 const pkgInfo = require('./package.json');
+const { InvalidFileError } = require('./src/errors');
 
 const [,, ...args] = process.argv;
 
@@ -21,8 +22,12 @@ function main() {
     }
 
     const file = args[0];
-    if(!file) throw new Error('No File Input');
-    const fileContent = file ? fs.readFileSync(`${file}`) : null;
+    if(!file) throw new InvalidFileError('No File Input');
+    try {
+        const fileContent = fs.readFileSync(`${file}`);
+    } catch {
+        throw new InvalidFileError(`No such file as '${file}'`);
+    }
 
     const bruhlang = new BruhLang(
         fileContent?.toString()
