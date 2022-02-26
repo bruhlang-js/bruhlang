@@ -32,7 +32,21 @@ function main() {
 }
 
 function help() {
-    const info = `    bruhlang <file>`;
+    const infos = [{
+        name: '<file>',
+        description: 'Runs the file given',
+    }, {
+        name: 'help',
+        description: 'Displays this message'
+    }]
+
+    let info = '';
+    infos.forEach((data, i) => {
+        const needsNewLine = i !== infos.length ? '\n' : '';
+        
+        info += `    bruhlang ${data.name} - ${data.description}${needsNewLine}`;
+    });
+
     console.log(
         `BruhLang | v${pkgInfo.version}\nCommands:\n${info}`
     )
