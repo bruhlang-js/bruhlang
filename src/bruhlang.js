@@ -19,7 +19,6 @@ class BruhLang {
 
     start() {
         let res = '';
-        const asciiLetters = new RegExp("[ -~]");
 
         while (this.char !== null) {
             if (this.char === '.') {
