@@ -1,3 +1,5 @@
+const pkgInfo = require('../package.json');
+
 // Information about the Commands
 const infos = [{
     name: '<file>',
@@ -27,15 +29,17 @@ function help(arg) {
 
     console.log(
         `BruhLang | v${pkgInfo.version}\nCommands:\n${info}`,
-    )
+    );
 }
 
 function helpCommand(arg) {
     const commandInfo = infos.find(x => x.raw === arg);
-    
-    const name = commandInfo.raw;
-    const description = commandInfo.description;
-    const usage = commandInfo.name;
+
+    const { 
+        raw: name, 
+        description, 
+        name: usage,
+    } = commandInfo;
     
     console.log(
         `bruhlang ${name} - ${description}\nUsage:\n    ${usage}`

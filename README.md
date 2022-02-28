@@ -4,8 +4,7 @@ Super super simple language made in JavaScript, inspired by brainfuck, but inste
 
 ## cli
 
-`bruhlang <file>`
-To run a file, it is required.
+`bruhlang <file>` - To run a file, it is required.
 
 ## Example
 
