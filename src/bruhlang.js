@@ -13,7 +13,7 @@ class BruhLang {
         this.pos++;
         this.char = this.pos < this.texts.length ? this.texts[this.pos] : null;
 
-        this.prevChar = this.char ? this.texts[this.pos - 1]: null;
+        this.prevChar = this.char ? this.texts[this.pos - 1] : null;
         this.afterChar = this.char ? this.texts[this.pos + 1] : null;
     }
 
