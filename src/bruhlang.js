@@ -1,52 +1,40 @@
 class BruhLang {
     constructor(texts) {
         this.texts = texts;
+        this.pos = -1;
+        this.char = null;
+        this.prevChar = null;
+        this.afterChar = null;
+
+        this.adv();
+    }
+
+    adv() {
+        this.pos++;
+        this.char = this.pos < this.texts.length ? this.texts[this.pos] : null;
+
+        this.prevChar = this.char ? this.texts[this.pos - 1]: null;
+        this.afterChar = this.char ? this.texts[this.pos + 1] : null;
     }
 
     start() {
         let res = '';
-        let hasDoneDotOp = false;
-        let hasDoneConcatOp = false;
-        
-        for (let i = 0; i < this.texts.length; i++) {
-            const text = this.texts[i];
-            const prevText = this.texts[i - 1];
-            const afterText = this.texts[i + 1];
+        const asciiLetters = new RegExp("[ -~]");
 
-            if (text === '.') {
-                if (
-                    afterText === '.' &&
-                    hasDoneDotOp === true
-                ) continue;
-
-                res += `${this.texts[i - 1]}`;
-                res = res.replace('.', '');
-                hasDoneDotOp = true;
-                continue;
+        while (this.char !== null) {
+            if (this.char === '.') {
+                res += `${this.prevChar}`;
+                res = res.replace('.', '')
+                this.adv()
+            } else if (this.char === '+') {
+                res += `${this.prevChar + this.afterChar}`;
+                this.adv()
             }
-
-            if(text === '+') {
-                if (
-                    afterText === '+' &&
-                    hasDoneConcatOp === true
-                ) continue;
-
-                if (
-                    prevText === '\t' &&
-                    afterText === '\t'
-                ) {
-                    res += `${this.texts[i - 2] + this.texts[i + 2]}`;
-                    res = res.replace('+', '');
-                    continue;
-                }
-
-                res += `${prevText + afterText}`;
-                res = res.replace('+', '');
-                hasDoneConcatOp = true;
-                continue;
+            
+            else {
+                res += this.char;
+                this.adv();
             }
-
-            res += text;
         }
 
         return res;

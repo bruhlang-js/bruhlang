@@ -6,3 +6,5 @@ hello + world
 
 hello world without spaces concat:
 hello+world
+
+hello +
