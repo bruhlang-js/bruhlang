@@ -28,3 +28,9 @@ Any characters (except for operators) not inside strings/double quotes will be i
 `+` - Concatenates two characters.
 
 `.` - Repeats the previous Character (works only inside strings)
+
+# Links
+
+[Github](https://github.com/bruhlang-js/bruhlang)
+
+[NPM](https://npmjs.com/package/bruhlang)
