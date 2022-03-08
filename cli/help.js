@@ -2,8 +2,9 @@ const pkgInfo = require('../package.json');
 
 // Information about the Commands
 const infos = [{
-    name: '<file>',
+    name: '<file> [--tokens|-T]',
     description: 'Runs the file given',
+    raw: '<file>'
 }, {
     name: 'help [command-name]',
     raw: 'help',
@@ -30,6 +31,7 @@ function help(arg) {
     console.log(
         `BruhLang | v${pkgInfo.version}\nCommands:\n${info}`,
     );
+    process.exit(0);
 }
 
 function helpCommand(arg) {
@@ -44,6 +46,7 @@ function helpCommand(arg) {
     console.log(
         `bruhlang ${name} - ${description}\nUsage:\n    ${usage}`
     );
+    process.exit(0);
 }
 
 module.exports = help;

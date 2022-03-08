@@ -27,8 +27,17 @@ function main() {
     const bruhlang = new BruhLang(
         fileContent?.toString()
     );
+    const { res, tokens } = bruhlang.start();
 
-    console.log(bruhlang.start());
+    if (
+        args.some(e => e === '--tokens' || e === '-T')
+    ) {
+        console.log(tokens);
+        return process.exit(0);
+    }
+
+    console.log(res);
+    process.exit(0);
 }
 
 main();

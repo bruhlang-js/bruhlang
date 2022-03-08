@@ -9,18 +9,22 @@ Super super simple language made in JavaScript, inspired by brainfuck, but inste
 ## Example
 
 ```
-// logs "hello world"
-hello world
+Saying hello world:
+"hello world"
 
-// logs "oo"
-o+o
+Repeating one char:
+"hello world."
+should print out 'hello worldd'
 
-// logs "hello worldd"
-hello world.d
+Concatenating two characters:
+"o+o"
+should print out 'oooo'
 ```
+
+Any characters (except for operators) not inside strings/double quotes will be ignored.
 
 # Operators
 
-`+` - Concatenates the previous character and the next character. (tends be buggy with spaces)
+`+` - Concatenates two characters.
 
-`.` - Repeats the previous Character
+`.` - Repeats the previous Character (works only inside strings)

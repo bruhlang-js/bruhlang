@@ -1,10 +1,5 @@
-hello world......
-nah hohogo
+dot op test:
+"hello world."
 
-hello world with spaces concat:
-hello + world
-
-hello world without spaces concat:
-hello+world
-
-hello +
+concat:
+"o+o"

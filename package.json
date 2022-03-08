@@ -1,7 +1,7 @@
 {
   "name": "bruhlang",
-  "version": "0.0.3",
-  "description": "Super duper simple language",
+  "version": "1.0.0",
+  "description": "satire 'programming' langauge",
   "main": "./cli/cli.js",
   "bin": {
     "bruhlang": "./cli/cli.js"
